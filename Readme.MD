@@ -1,4 +1,4 @@
-# Linear Optimization for profit maximization
+# Linear Optimization for battery profit maximization
 
 My ongoing experimentations with linear optimization for profit maximization using battery systems integrated in a home energy management system. 
 
@@ -13,6 +13,7 @@ The assumption is that there are solar panels connected to the home as well as a
 Where I live the regulatory bodies are moving towards phasing out the possibility to feed power back into the grid by running the meter backwards.
 After the phase out is complete the home-owner will receive a different (much lower) rate for feeding their generated power back into the grid. 
 The scripts in this repo are my experiments with finding the optimal schedule for controlling the battery in such a manner that it can be easily adapted to the inclusion of additional constraints.
+
 ## Scripts:
 - pulp_battery.py
   - This script is the basic implementation of a linear optimization scheme for the purpose described above. Synthetic data is generated to do a simulation of a single day. The PuLP library is used to carry out the simulation.
@@ -22,6 +23,7 @@ The scripts in this repo are my experiments with finding the optimal schedule fo
   - My second attempt at implementing a pareto frontier, this time aimed at making the code easier to adapt to other objectives or constraints.
 
 ## How to adapt:
+- Clone this repo, make a new branch and push your branch with changes back to github.
 - Start with understanding the pulp_battery.py script
 - Adjust the values in the simulated data
 - Adjust the values in the parameters
@@ -32,4 +34,7 @@ The scripts in this repo are my experiments with finding the optimal schedule fo
   - bat_efficiency 
   - grid_max_rate
 - Add new constraints starting on line 56
+- Add your own data to replace the synthetic data
+- Remove verbosity (excessive printing to console) in the script
+- Run a simulation repeating the optimization for many different timesteps in a longer timeseries of data
 
