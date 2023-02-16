@@ -114,7 +114,7 @@ for pareto_alpha in pareto_alpha_linspace:
     results_dfs.append(results)
 
 pareto_front = pd.Series(total_costs, index=pareto_alpha_linspace)
-pareto_front.plot()
+pareto_front.to_frame().plot()
 pareto_front_i = 0
 for pareto_front_i in range(len(pareto_alpha_linspace)):
     df.join(results_dfs[pareto_front_i][['soc', 'battery', 'grid']]).plot(subplots=True, title = f'total_cost={total_costs[pareto_front_i]}')

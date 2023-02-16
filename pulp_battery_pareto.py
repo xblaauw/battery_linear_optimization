@@ -198,9 +198,3 @@ for price_pareto in pareto_total_cost_linespace:
 pareto_co2_emissions_range = pd.Series(pareto_co2_emissions, index=pareto_total_cost_linespace, name='co2_emissions').rename_axis('total_cost')
 plt.figure()
 pareto_co2_emissions_range.plot()
-
-
-models = ['icon', 'ecmwf', 'euro10', 'harmonie']
-comb = []
-for r in range(1,len(models)+1):
-    comb += list(combinations([n for n in models], r=r))
